@@ -15,7 +15,7 @@ var MessagesView = {
     var allMessages = Messages._data;
     for (var i = 0; i < allMessages.length; i++) {
       var message = allMessages[i];
-      console.log(message);
+      //console.log(message);
       this.renderMessage(message);
     }
   },

@@ -17,8 +17,9 @@ var App = {
     MessagesView.initialize();
 
     // Fetch initial batch of messages
-    App.startSpinner();
+    // App.startSpinner();
     App.fetch(App.stopSpinner);
+    App.refresh();
 
     // TODO: Make sure the app loads data from the API
     // continually, instead of just once at the start.
@@ -59,5 +60,39 @@ var App = {
   stopSpinner: function() {
     App.$spinner.fadeOut('fast');
     FormView.setStatus(false);
+  },
+
+
+  refresh: function() {
+
+    // var $refreshButton = document.getElementById('#refreshFeed');
+    // console.log($refreshButton);
+    $('#refreshButton').click(function () {
+    // $feed.empty();
+    // $updateFeed.html("Update Feed");
+    // renderFeed();
+      console.log('updated');
+      location.reload();
+    });
+
   }
+
+
+
+
 };
+
+// var $refreshButton = document.getElementById('refreshFeed');
+
+// $refreshButton.click(function (event) {
+//   // $feed.empty();
+//   // $updateFeed.html("Update Feed");
+//   // renderFeed();
+//   console.log('updated');
+// });
+
+// $(".widgetselecterbtn").click(function() {
+//   //do your task here
+// });
+
+
