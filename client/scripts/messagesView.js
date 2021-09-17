@@ -10,11 +10,15 @@ var MessagesView = {
     // when this view loads.
   },
 
-  render: function() {
+  render: function(data) {
     // TODO: Render _all_ the messages.
-    var allMessages = Messages._data;
-    for (var i = 0; i < allMessages.length; i++) {
-      var message = allMessages[i];
+    if (data === undefined) {
+      data = Messages._data;
+    }
+    console.log('first message', data[0]);
+    this.$chats.empty();
+    for (var i = 0; i < data.length; i++) {
+      var message = data[i];
       //console.log(message);
       this.renderMessage(message);
     }

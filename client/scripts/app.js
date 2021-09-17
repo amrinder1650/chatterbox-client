@@ -21,6 +21,7 @@ var App = {
     App.fetch(App.stopSpinner);
     App.refresh();
     RoomsView.handleClick();
+    RoomsView.handleChange();
 
 
     // TODO: Make sure the app loads data from the API

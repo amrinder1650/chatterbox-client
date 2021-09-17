@@ -39,7 +39,7 @@ var RoomsView = {
 
   },
 
-  handleChange: function(event) {
+  handleChange: function() {
     // TODO: Handle a user selecting a different room.
 
     var selectedMessages = [];
@@ -52,6 +52,9 @@ var RoomsView = {
     }
 
     console.log(selectedMessages);
+    console.log('page should be refreshed');
+
+    MessagesView.render(selectedMessages);
 
   },
 
