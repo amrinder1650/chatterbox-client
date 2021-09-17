@@ -25,10 +25,18 @@ var RoomsView = {
     Rooms._data = [...set];
     console.log(Rooms._data);
 
+    for (var i = 0; i < Rooms._data.length; i++) {
+      RoomsView.renderRoom(Rooms._data[i]);
+    }
+
   },
 
   renderRoom: function(roomname) {
     // TODO: Render out a single room.
+
+    $('#roomSelector').append($('<option></option>').val(roomname).html(roomname));
+
+
   },
 
   handleChange: function(event) {
@@ -37,6 +45,27 @@ var RoomsView = {
 
   handleClick: function(event) {
     // TODO: Handle the user clicking the "Add Room" button.
+    $('#rooms button').click(function () {
+      // $feed.empty();
+      // $updateFeed.html("Update Feed");
+      // renderFeed();
+      var newRommname = prompt('Enter name of the new room');
+      var newRoomMessage = 'Hello, welcome to this new room!';
+
+      var message = {};
+
+      message['username'] = App.username;
+      message['text'] = newRoomMessage;
+      message['roomname'] = newRommname;
+
+      Parse.create(message, function() {
+        console.log('New Room Created');
+      });
+
+
+    });
+
+
   }
 
 };

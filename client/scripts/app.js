@@ -20,6 +20,7 @@ var App = {
     // App.startSpinner();
     App.fetch(App.stopSpinner);
     App.refresh();
+    RoomsView.handleClick();
 
 
     // TODO: Make sure the app loads data from the API
