@@ -5,6 +5,7 @@ var RoomsView = {
 
   $button: $('#rooms button'),
   $select: $('#rooms select'),
+  selectedRoom: 'lobby',
 
   initialize: function() {
     // TODO: Perform any work which needs to be done
@@ -45,6 +46,7 @@ var RoomsView = {
     var selectedMessages = [];
 
     var selectedRoom = document.getElementById('roomSelector').value;
+    this.selectedRoom = selectedRoom;
     for (var i = 0; i < Messages._data.length; i++) {
       if (Messages._data[i].roomname === selectedRoom) {
         selectedMessages.push(Messages._data[i]);

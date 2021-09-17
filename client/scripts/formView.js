@@ -21,8 +21,9 @@ var FormView = {
 
     message['username'] = App.username;
     message['text'] = document.getElementById('message').value;
-    message['roomname'] = 'default';
-
+    message['roomname'] = RoomsView.selectedRoom;
+    //if no room is selected, roomname should be lobby of default
+    //if some room is selected, roomname should be selected room name
 
     Parse.create(message, function() {
       console.log('Success');
