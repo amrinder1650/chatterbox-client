@@ -27,7 +27,7 @@
       <div class="spinner"><img src="client/images/spiffygif_46x46.gif"></div>
       <div id="rooms">
         Room:
-        <select id='roomSelector'>
+        <select id='roomSelector' onchange="RoomsView.handleChange()">
           <option>Choose a room</option>
         </select>
         <button id = 'rooms button'>Add Room</button>

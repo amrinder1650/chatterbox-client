@@ -41,6 +41,18 @@ var RoomsView = {
 
   handleChange: function(event) {
     // TODO: Handle a user selecting a different room.
+
+    var selectedMessages = [];
+
+    var selectedRoom = document.getElementById('roomSelector').value;
+    for (var i = 0; i < Messages._data.length; i++) {
+      if (Messages._data[i].roomname === selectedRoom) {
+        selectedMessages.push(Messages._data[i]);
+      }
+    }
+
+    console.log(selectedMessages);
+
   },
 
   handleClick: function(event) {
