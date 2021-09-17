@@ -21,6 +21,7 @@ var App = {
     App.fetch(App.stopSpinner);
     App.refresh();
 
+
     // TODO: Make sure the app loads data from the API
     // continually, instead of just once at the start.
   },
@@ -44,7 +45,7 @@ var App = {
       //return data[i];
       //pass data[i] as an argument to the messagesview.initialize or render
 
-
+      RoomsView.render();
       // Messages[_data] = data;
       // Messages[returnOneMessage()];
       // TODO: Use the data to update Messages and Rooms

@@ -13,6 +13,18 @@ var RoomsView = {
 
   render: function() {
     // TODO: Render out the list of rooms.
+
+    // var Rooms = [];
+
+    for (var i = 0; i < Messages['_data'].length; i++) {
+      Rooms._data.push(Messages['_data'][i].roomname);
+    }
+
+
+    var set = new Set(Rooms._data);
+    Rooms._data = [...set];
+    console.log(Rooms._data);
+
   },
 
   renderRoom: function(roomname) {
