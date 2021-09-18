@@ -24,6 +24,7 @@ var App = {
     // setTimeout(RoomsView.handleClick, 1000);
     RoomsView.handleChange();
     setTimeout(MessagesView.handleClick, 1000);
+    console.log('current friends', Friends._data);
 
 
 

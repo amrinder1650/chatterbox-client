@@ -4,6 +4,7 @@
 var MessagesView = {
 
   $chats: $('#chats'),
+  $chat:$('.chat'),
 
   initialize: function() {
     // TODO: Perform any work which needs to be done
@@ -22,6 +23,8 @@ var MessagesView = {
       //console.log(message);
       this.renderMessage(message);
     }
+
+
   },
 
   renderMessage: function(message) {
@@ -33,48 +36,43 @@ var MessagesView = {
     $message.appendTo(this.$chats);
     // var message = MessageView.render(message);
     // console.log('message ', message);
+
+    if (Friends._data.includes(message.username)) {
+      console.log(Friends._data.includes(message.username));
+      console.log(message.username);
+
+      //$(selector).addClass(classname)
+      //OR $(this.parentNode).addClass('newClass');
+      $message.addClass('friend');
+      //add class to these usernames
+      //change css in styles for friends class - highlight it
+    }
   },
 
   handleClick: function() {
     // TODO: handle a user clicking on a message
     // (this should add the sender to the user's friend list).
-    // $('.username').click(function (target) {
-    //   // $feed.empty();
-    //   // $updateFeed.html("Update Feed");
-    //   // renderFeed();
-
-    // });
-    //var $username = document.getElementsByClassName('username');
-
-    // $('.username').click(function() {
-
-    //   console.log('clicked on username');
-
-    // });
-
-
 
     $('.username').on('click', function(e) {
-      Friends._data.push(e.target.innerText);
-      console.log('here1', e.target.innerText);
+      var username = e.target.innerText;
+      Friends._data.push(username);
 
       var set = new Set(Friends._data);
       Friends._data = [...set];
-      console.log('here2', Friends._data);
+
+      console.log('your friend is ', username);
+      console.log(Friends._data);
+
+      App.fetch();
+
+
 
     });
 
-    // $('.username').click( function() {
-    //   console.log('clicked on username');
-    // });
 
-    // var username = document.getElementsByClassName('username');
-    // username.addEventListener('click', function(e) {
-    // // e is the event object
-    // // e.target is the button element
-    // // do stuff with them
-    //   console.log('clicked on username ', e);
-    // });
+
+
+
   }
 
 };
