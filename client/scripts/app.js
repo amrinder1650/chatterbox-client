@@ -21,7 +21,12 @@ var App = {
     App.fetch(App.stopSpinner);
     App.refresh();
     RoomsView.handleClick();
+    // setTimeout(RoomsView.handleClick, 1000);
     RoomsView.handleChange();
+    setTimeout(MessagesView.handleClick, 1000);
+
+
+
 
 
     // TODO: Make sure the app loads data from the API
