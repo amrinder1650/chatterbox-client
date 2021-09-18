@@ -22,7 +22,7 @@ var App = {
     App.refresh();
     RoomsView.handleClick();
     // setTimeout(RoomsView.handleClick, 1000);
-    RoomsView.handleChange();
+
     setTimeout(MessagesView.handleClick, 1000);
     console.log('current friends', Friends._data);
 
@@ -54,6 +54,8 @@ var App = {
       //pass data[i] as an argument to the messagesview.initialize or render
 
       RoomsView.render();
+      RoomsView.handleChange();
+
       // Messages[_data] = data;
       // Messages[returnOneMessage()];
       // TODO: Use the data to update Messages and Rooms

@@ -46,6 +46,10 @@ var RoomsView = {
     var selectedMessages = [];
 
     var selectedRoom = document.getElementById('roomSelector').value;
+    console.log('selected room ', selectedRoom);
+    if (selectedRoom === undefined && selectedRoom === null) {
+      selectedRoom = 'default';
+    }
     this.selectedRoom = selectedRoom;
     for (var i = 0; i < Messages._data.length; i++) {
       if (Messages._data[i].roomname === selectedRoom) {
